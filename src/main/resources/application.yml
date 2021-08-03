@@ -1,0 +1,56 @@
+
+spring:
+  datasource:
+    primary:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.30.251:3306/testtools
+      username: yanyu
+      password: mock@2018
+      type: com.alibaba.druid.pool.DruidDataSource
+    local:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://pc-2ze61040239rsb89c.mysql.polardb.rds.aliyuncs.com:3306/trade_regist
+      username: trade_regist_ro
+      password: 8G2zkM5ivtCM4XCu
+      type: com.alibaba.druid.pool.DruidDataSource
+    prod:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://pc-2ze61040239rsb89c.mysql.polardb.rds.aliyuncs.com:3306/trade_regist
+      username: trade_regist_ro
+      password: 8G2zkM5ivtCM4XCu
+      type: com.alibaba.druid.pool.DruidDataSource
+
+
+
+
+# 配置pagehelper参数
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  global-config:
+    db-config:
+      #删除前
+      logic-not-delete-value: 1
+      #删除后
+    logic-delete-value: 0
+
+
+server:
+  port: 80
+
+
+
+
+
+
+
